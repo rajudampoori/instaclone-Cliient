@@ -1,0 +1,38 @@
+.login-container{
+    border: 1px solid black;
+    padding: 10px;
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.inputa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+
+
+.inputb {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+
+.inputc {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+
+.inputd {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+

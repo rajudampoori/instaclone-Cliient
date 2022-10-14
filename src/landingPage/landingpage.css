@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    column-gap: 20px;
+}
+
+img{
+    height: 300px;
+}
+
+h1{
+    color: greenyellow;
+}
+
+.btn{
+    width: 80px;
+    border-radius: 5px;
+    padding: 2px;
+}
