@@ -30,7 +30,8 @@ const Login = () => {
         formdata.append("location", location);
         formdata.append("description", description)
         formdata.append("image", image)
-        await Axios.post('https://v2.convertapi.com/upload', (formdata)).then(res => { console.log(res) })
+        await Axios.post('https://dashboard.heroku.com/apps/instaclone-app-for-posting', (formdata))
+        .then(res => { console.log(res) })
             .catch(error => {
                 console.log(error)
             })

@@ -1,6 +1,7 @@
 import React from "react";
 import { useState,useEffect } from "react";
 import './fetchapi.css'
+import './card.css'
 import Header from "../header/header";
 import { json } from "react-router-dom";
 const Api = ()=> {
@@ -8,10 +9,13 @@ const Api = ()=> {
     const apiGet = ()=> {
         const httpoptions = {
         method : "GET",
-
+        headers:{
+            "Content-Type" : "application/json",
+            "Accept":"application/json"
         }
-        fetch('https://jsonplaceholder.typicode.com/posts/1',)
-        .then((response) => response.json()).then((data)=> {
+        }
+        fetch('https://dashboard.heroku.com/apps/instaclone-app-for-posting',httpoptions)
+        .then((data) => data.json()).then((data)=> {
             setdata(data.data.reverse())
         })
     }
@@ -41,7 +45,8 @@ return (
             </section>
 
             <section className="card-image">
-                <img src={item.PostImage} alt='imageicon' />
+                <img src={`https://dashboard.heroku.com/apps/instaclone-app-for-posting/
+                ${item.PostImage}`} alt='imageicon' />
             </section>
 
             <section className='card-actions'>
@@ -51,8 +56,8 @@ return (
                 <span>
                     <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
                 </span>
-                <span>
-                    {item.date}
+                <span id="date">
+                    {item.date.split("T")[0]}
                 </span>
             </section>
 
