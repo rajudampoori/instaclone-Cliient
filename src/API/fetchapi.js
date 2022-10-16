@@ -1,6 +1,5 @@
 import React from "react";
 import { useState,useEffect } from "react";
-import './fetchapi.css'
 import './card.css'
 import Header from "../header/header";
 import { json } from "react-router-dom";
@@ -14,9 +13,10 @@ const Api = ()=> {
             "Accept":"application/json"
         }
         }
-        fetch('https://dashboard.heroku.com/apps/instaclone-app-for-posting',httpoptions)
+        fetch('http://localhost:8000/posts',httpoptions)
         .then((data) => data.json()).then((data)=> {
-            setdata(data.data.reverse())
+            console.log(data)
+            setdata(data.posts.reverse())
         })
     }
     useEffect(()=> {
@@ -26,13 +26,10 @@ return (
     <div>
         <Header/>
 
-        {/* My API <br/>
-        <button onClick={apiGet}>Fetch Api</button>
-        <br/> */}
-        {/* <pre>
-        {JSON.stringify(data,null,2)}
-        </pre> */}
       {data.map((item,i)=> {
+        // const base64String = btoa(
+        //     String.fromCharCode(...new Uint8Array(item.PostImage.data))
+        // )
         return (
             <section key={i} className="card">
 
@@ -45,8 +42,8 @@ return (
             </section>
 
             <section className="card-image">
-                <img src={`https://dashboard.heroku.com/apps/instaclone-app-for-posting/
-                ${item.PostImage}`} alt='imageicon' />
+                <img src={`http://localhost:8000/images/${item.PostImage}`} alt='imageicon' />
+                {/* <img src={`data:image/png;${base64String}`}/> */}
             </section>
 
             <section className='card-actions'>
@@ -78,3 +75,7 @@ return (
 }
 export default Api;
 // https://jsonplaceholder.typicode.com/posts/1
+//const base64String = btoa(
+    // String.fromCharCode(...new Uint8Array(item.postImage.data))
+    // );
+{/* <img src={`data:image/png;${base64String}`}></img> */}

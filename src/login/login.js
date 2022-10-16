@@ -12,16 +12,7 @@ const Login = () => {
     const [myfile, setMyfile] = useState("")
 
     const navigate = useNavigate()
-
-
-    // const handleFile = (e) => {
-    //     console.log(e.target.files, "$$$$")
-    //     console.log(e.target.files[0], "$$$$")
-    //     if (e.target && e.target.files[0]) {
-    //         formdata.append('file', e.target.files[0])
-    //     }
-    // }
-
+   
     const handleUpload = async (e) => {
         e.preventDefault();
         setMyfile("myfile...")
@@ -29,8 +20,8 @@ const Login = () => {
         formdata.append("name", name);
         formdata.append("location", location);
         formdata.append("description", description)
-        formdata.append("image", image)
-        await Axios.post('https://dashboard.heroku.com/apps/instaclone-app-for-posting', (formdata))
+        formdata.append("PostImage", image)
+        await Axios.post('http://localhost:8000/posts', (formdata))
         .then(res => { console.log(res) })
             .catch(error => {
                 console.log(error)
@@ -38,19 +29,15 @@ const Login = () => {
         navigate("/postview");
         setMyfile("")
     }
-
     return (
         <div className="login-container">
 <Header/>
             <form encType="multipart/form-data">
                 <div className="inputa">
                     <div className="i1">
-                        <input type="file" name="image"
+                        <input type="file" name="PostImage"
                             onChange={(e) => { setImage(e.target.files[0]) }} placeholder="Browse" />
                     </div>
-                    {/* <div>
-                        <button className="btn">Browse</button>
-                    </div> */}
                 </div>
 
                 <div className="inputb">
@@ -70,11 +57,15 @@ const Login = () => {
                 </div>
 
                 <div className="inputd">
+
                     <button className="btn2" onClick={(e) => { handleUpload(e) }}>Post</button>
+
                 </div>
+
                 <label>{myfile === "" ? "" : myfile}</label>
             </form>
         </div>
     )
 }
 export default Login;
+//
