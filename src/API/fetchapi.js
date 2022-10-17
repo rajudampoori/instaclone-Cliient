@@ -43,7 +43,8 @@ return (
             </section>
 
             <section className="card-image">
-                <img src={`https://instaclone-mini.herokuapp.com/images/${item.PostImage}`} alt='imageicon' />
+                <img src={`https://instaclone-mini.herokuapp.com/posts/images/${item.PostImage}`} 
+                alt='imageicon' />
                 {/* <img src={`data:image/png;${base64String}`}/> */}
             </section>
 
