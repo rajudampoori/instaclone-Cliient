@@ -12,7 +12,7 @@ const Login = () => {
     const [myfile, setMyfile] = useState("")
 
     const navigate = useNavigate()
-   
+
     const handleUpload = async (e) => {
         e.preventDefault();
         setMyfile("myfile...")
@@ -21,8 +21,9 @@ const Login = () => {
         formdata.append("location", location);
         formdata.append("description", description)
         formdata.append("PostImage", image)
-        await Axios.post('http://localhost:8000/posts', (formdata))
-        .then(res => { console.log(res) })
+        await Axios.post(' http://localhost:8000/posts', (formdata))
+        //https://instaclone-mini.herokuapp.com/posts
+            .then(res => { console.log(res) })
             .catch(error => {
                 console.log(error)
             })
@@ -31,7 +32,7 @@ const Login = () => {
     }
     return (
         <div className="login-container">
-<Header/>
+            <Header />
             <form encType="multipart/form-data">
                 <div className="inputa">
                     <div className="i1">

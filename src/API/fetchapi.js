@@ -13,7 +13,8 @@ const Api = ()=> {
             "Accept":"application/json"
         }
         }
-        fetch('http://localhost:8000/posts',httpoptions)
+        fetch('https://instaclone-mini.herokuapp.com/posts',httpoptions)
+        //http://localhost:8000
         .then((data) => data.json()).then((data)=> {
             console.log(data)
             setdata(data.posts.reverse())

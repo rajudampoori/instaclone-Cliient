@@ -20,6 +20,7 @@
 
 .card-header_name {
     font-weight: bold;
+    margin-right: 10px;
 }
 
 .card-header_location {
@@ -38,7 +39,7 @@
 }
 
 /* .card-actions {
-    display: inline-block;
+    display: flex;
 } */
 
 .card-actions span {
