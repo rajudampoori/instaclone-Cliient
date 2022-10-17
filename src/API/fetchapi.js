@@ -13,7 +13,7 @@ const Api = ()=> {
             "Accept":"application/json"
         }
         }
-        fetch('https://instaclone-mini.herokuapp.com/posts',httpoptions)
+        fetch('https://instaclone-server-10x-project.herokuapp.com/posts',httpoptions)
         //http://localhost:8000
         .then((data) => data.json()).then((data)=> {
             console.log(data)
@@ -43,7 +43,7 @@ return (
             </section>
 
             <section className="card-image">
-                <img src={`https://instaclone-mini.herokuapp.com/posts/images/${item.PostImage}`} 
+                <img src={`https://instaclone-server-10x-project.herokuapp.com/images/${item.PostImage}`} 
                 alt='imageicon' />
                 {/* <img src={`data:image/png;${base64String}`}/> */}
             </section>
