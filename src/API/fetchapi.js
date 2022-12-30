@@ -2,7 +2,8 @@ import React from "react";
 import { useState,useEffect } from "react";
 import './card.css'
 import Header from "../header/header";
-import { json } from "react-router-dom";
+
+
 const Api = ()=> {
     const [data,setdata] = useState([])
     const apiGet = ()=> {
@@ -13,8 +14,7 @@ const Api = ()=> {
             "Accept":"application/json"
         }
         }
-        fetch('https://instaclone-server-10x-project.herokuapp.com/posts',httpoptions)
-        //http://localhost:8000
+        fetch('https://instaclone-server-jlbz.onrender.com/posts',httpoptions)
         .then((data) => data.json()).then((data)=> {
             console.log(data)
             setdata(data.posts.reverse())
@@ -28,9 +28,6 @@ return (
         <Header/>
 
       {data.map((item,i)=> {
-        // const base64String = btoa(
-        //     String.fromCharCode(...new Uint8Array(item.PostImage.data))
-        // )
         return (
             <section key={i} className="card">
 
@@ -43,11 +40,9 @@ return (
             </section>
 
             <section className="card-image">
-                <img src={`https://instaclone-server-10x-project.herokuapp.com/images/${item.PostImage}`} 
+                <img src={`http://localhost:8000/images/${item.PostImage}`} 
                 alt='imageicon' />
-                {/* <img src={`data:image/png;${base64String}`}/> */}
             </section>
-
             <section className='card-actions'>
                 <span>
                     <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -76,8 +71,3 @@ return (
 )
 }
 export default Api;
-// https://jsonplaceholder.typicode.com/posts/1
-//const base64String = btoa(
-    // String.fromCharCode(...new Uint8Array(item.postImage.data))
-    // );
-{/* <img src={`data:image/png;${base64String}`}></img> */}

@@ -21,8 +21,7 @@ const Login = () => {
         formdata.append("location", location);
         formdata.append("description", description)
         formdata.append("PostImage", image)
-        await Axios.post(' https://instaclone-server-10x-project.herokuapp.com/posts', (formdata))
-        //https://instaclone-mini.herokuapp.com/posts
+        await Axios.post('https://instaclone-server-jlbz.onrender.com/posts', (formdata))
             .then(res => { console.log(res) })
             .catch(error => {
                 console.log(error)
