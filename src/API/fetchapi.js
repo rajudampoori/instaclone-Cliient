@@ -40,7 +40,7 @@ return (
             </section>
 
             <section className="card-image">
-                <img src={`http://localhost:8000/images/${item.PostImage}`} 
+                <img src={`https://instaclone-server-jlbz.onrender.com/images/${item.PostImage}`} 
                 alt='imageicon' />
             </section>
             <section className='card-actions'>

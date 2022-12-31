@@ -34,10 +34,10 @@ const Login = () => {
             <Header />
             <form encType="multipart/form-data">
                 <div className="inputa">
-                    <div className="i1">
+                    {/* <div className="i1"> */}
                         <input type="file" name="PostImage"
                             onChange={(e) => { setImage(e.target.files[0]) }} placeholder="Browse" />
-                    </div>
+                    {/* </div> */}
                 </div>
 
                 <div className="inputb">
