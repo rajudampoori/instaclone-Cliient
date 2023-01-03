@@ -21,7 +21,7 @@ const Login = () => {
         formdata.append("location", location);
         formdata.append("description", description)
         formdata.append("PostImage", image)
-        await Axios.post('https://instaclone-server-jlbz.onrender.com/posts', (formdata))
+        await Axios.post('https://instaclone-server-i6wb.onrender.com/posts', (formdata))
             .then(res => { console.log(res) })
             .catch(error => {
                 console.log(error)
