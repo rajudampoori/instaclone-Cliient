@@ -40,7 +40,7 @@ return (
             </section>
 
             <section className="card-image">
-                <img src={`https://instaclone-server-i6wb.onrender.com/posts/${item.PostImage}`} 
+                <img src={`https://instaclone-server-i6wb.onrender.com/posts/images/${item.PostImage}`} 
                 alt='imageicon' />
             </section>
             <section className='card-actions'>
@@ -54,7 +54,6 @@ return (
                     {item.date.split("T")[0]}
                 </span>
             </section>
-
             <section className='likes'>
                 {item.likes} Likes
             </section>
