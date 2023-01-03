@@ -14,7 +14,7 @@ const Api = ()=> {
             "Accept":"application/json"
         }
         }
-        fetch('https://instaclone-server-jlbz.onrender.com/posts',httpoptions)
+        fetch('https://instaclone-server-i6wb.onrender.com/posts',httpoptions)
         .then((data) => data.json()).then((data)=> {
             console.log(data)
             setdata(data.posts.reverse())
@@ -40,8 +40,7 @@ return (
             </section>
 
             <section className="card-image">
-                <img src={`https://instaclone-server-i6wb.onrender.com/posts/images/${item.PostImage}`} 
-                //
+                <img src={`https://instaclone-server-i6wb.onrender.com/posts/${item.PostImage}`} 
                 alt='imageicon' />
             </section>
             <section className='card-actions'>
